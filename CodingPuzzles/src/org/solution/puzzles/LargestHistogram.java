@@ -5,7 +5,7 @@ import java.util.Stack;
 
 public class LargestHistogram {
 	public static void main(String[] args) {
-		int[] heights = {2, 1, 5, 6, 2, 3};
+		int[] heights = {2, 1, 5, 6, 2, 3, 7, 5, 5};
 		System.out.println( maxArea( heights));
 	}
 	

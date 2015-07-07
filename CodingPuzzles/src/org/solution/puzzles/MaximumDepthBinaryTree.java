@@ -8,7 +8,7 @@ public class MaximumDepthBinaryTree {
 		root.right = new Node(7);
 		root.left.left = new Node(18);
 		root.left.right = new Node(9);		
-		root.left.left = new Node(22);
+		//root.left.left = new Node(22);
 		root.right.right = new Node(1);
 		root.right.right.right = new Node(11);
 		root.right.right.right.right = new Node(10);
@@ -21,6 +21,9 @@ public class MaximumDepthBinaryTree {
 		if(root == null)
 			return 0;
 		
-		return Math.max(solve(root.left), solve(root.right)) + 1;
+		int a = solve(root.left);
+		int b = solve(root.right);
+		
+		return Math.max(a+ b, b) + 1;
 	}
 }
