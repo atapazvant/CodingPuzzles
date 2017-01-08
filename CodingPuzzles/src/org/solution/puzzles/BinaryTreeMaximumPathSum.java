@@ -11,12 +11,12 @@ public class BinaryTreeMaximumPathSum {
 		root.left.right = new Node(9);		
 
 		System.out.println(maxSum(root));
-		System.out.println(max);
+		//System.out.println(max);
 		
 		System.out.println("**************");
 		
 		System.out.println(maxSum2(root, max));
-		System.out.println("Result : " +  max);			
+		//System.out.println("Result : " +  max);			
 	}
 	
 	public static int maxSum(Node head) {
@@ -35,25 +35,18 @@ public class BinaryTreeMaximumPathSum {
 		return head.data + Math.max(maxleft, maxright);
 	}
 	
-	public static int maxSum2(Node head, int max) {
-		
-		if(head == null)
+	public static int maxSum2(Node root, int max) {
+		if (root == null)
 			return 0;
-		
-		int left = maxSum2(head.left, max);
-		int right = maxSum2(head.right, max);
-		
-		int headValueMax = head.data;
-		if(left > 0)
-			headValueMax += left;
-		if(right > 0)
-			headValueMax += right;
-		
-		max = Math.max(max, headValueMax);
-		
-		System.out.println("Max : " + max);
-		
-		return Math.max(head.data, Math.max(head.data + left, head.data + right));
+	 
+		int left = maxSum2(root.left, max);
+		int right = maxSum2(root.right, max);
+	 
+		int current = Math.max(root.data, Math.max(root.data + left, root.data + right));
+	 
+		max = Math.max(max, Math.max(current, left + root.data + right));
+	 
+		return current;
 	}
 }
 

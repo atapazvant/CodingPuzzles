@@ -13,6 +13,10 @@ public class Anagrams {
 		ArrayList<ArrayList<String>> aStrs = findAnagrams(words);
 		
 		System.out.println(aStrs.size());
+
+		for (ArrayList<String> arrayList : aStrs) {
+			System.out.println(arrayList.toString());
+		}
 	}
 	
 	public static ArrayList<ArrayList<String>> findAnagrams(String[] words) {
